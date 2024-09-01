@@ -1,0 +1,84 @@
+HR Analytics Dashboard Project
+
+Overview:
+In this project, I analyzed employee attendance data for April to June 2022, focusing on identifying patterns in Work From Home (WFH) and Work From Office (WFO) behavior. The goal was to derive actionable insights for better team activity planning and optimize office space utilization. The analysis was performed using Power BI and Excel, with data transformation and automation executed through Power Query.
+
+Project Steps:
+
+1. Data Collection and Preparation
+   - Data Source: The data was provided in multiple Excel sheets, each containing attendance records for different months.
+   - Consolidation: 
+     - I imported the data sheets into Power BI using Power Query.
+     - Transformation: 
+       - Removed unnecessary columns such as employee IDs that were not required for the analysis.
+       - Used the `Unpivot Columns` feature in Power Query to transform the data into a long format, making it easier to analyze attendance across different days.
+
+ 2. Data Cleaning
+   - Handling Missing Data: 
+     - Identified missing or inconsistent records using Power Query.
+     - Applied a `Filter` to remove rows with missing attendance values.
+   - Data Type Conversion: 
+     - Ensured that date columns were correctly formatted as `Date` data types and attendance columns as `Decimal` or `Whole Number` types, depending on the data.
+
+3. Metric Development using DAX
+   - Presence Percentage (`Presence %`) Calculation:
+     - Created a DAX measure to calculate the percentage of days each employee was present.
+     - Formula:
+       DAX
+       Presence % = 
+       DIVIDE(
+           COUNTROWS(FILTER(AttendanceData, AttendanceData[Status] = "Present")),
+           COUNTROWS(AttendanceData)
+       ) * 100
+       
+   - Work From Home Percentage (`WFH %`) Calculation:
+     - Developed a DAX measure to calculate the percentage of days employees worked from home.
+     - Formula:
+       DAX
+       WFH % = 
+       DIVIDE(
+           COUNTROWS(FILTER(AttendanceData, AttendanceData[Status] = "WFH")),
+           COUNTROWS(AttendanceData)
+       ) * 100
+       
+   - Sick Leave Percentage (`SL %`) Calculation:
+     - Created a DAX measure to determine the percentage of sick leave taken by employees.
+     - Formula:
+       DAX
+       SL % = 
+       DIVIDE(
+           COUNTROWS(FILTER(AttendanceData, AttendanceData[Status] = "Sick Leave")),
+           COUNTROWS(AttendanceData)
+       ) * 100
+       
+
+4. Data Visualization
+   - Power BI Dashboard Design:
+     - Developed a dashboard layout that highlights key metrics (Presence %, WFH %, SL %) in a visually intuitive manner.
+     - Visuals Used:
+       - Line Charts to display trends over the three-month period for Presence %, WFH %, and SL %.
+       - Bar Charts to compare attendance metrics on different days of the week.
+       - Cards for showing high-level KPIs, such as average Presence %, WFH %, and SL % across the entire period.
+   - Interactive Features:
+     - Added slicers to allow users to filter data by specific departments, locations, or individual employees.
+     - Incorporated tooltips that provide additional context when hovering over data points.
+
+5. Key Insights and Analysis
+   - Trend Analysis:
+     - Observed a decline in `Presence %` from April to June, while `WFH %` increased, suggesting a growing preference for remote work.
+   - Day-Specific Patterns:
+     - Identified that the highest `Presence %` occurred on Mondays (93.21%), while Fridays had the highest `WFH %` (13.01%), indicating a trend towards remote work at the end of the week.
+   - Impactful Recommendations:
+     - Recommended scheduling important team activities on Mondays to maximize employee participation.
+     - Suggested re-evaluating office space requirements based on increasing WFH trends to optimize costs.
+
+6. Automation and Efficiency
+   - Template Function:
+     - Created a reusable template function in Power Query to automate the data cleaning and transformation process for any new attendance data.
+   - Scheduled Data Refresh:
+     - Configured Power BI to automatically refresh the data from Excel sheets on a scheduled basis, ensuring the dashboard always reflects the latest information.
+
+7. Documentation and Reporting
+   - Final Report:
+     - Compiled the insights and recommendations into a formal report.
+     - Included screenshots of key dashboard elements and visualizations to support the analysis.
