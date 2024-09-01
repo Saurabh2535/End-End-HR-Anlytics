@@ -40,3 +40,5 @@ This project showcases my ability to analyze complex data sets, automate process
 - **Documentation:** Detailed project documentation and analysis reports.
 
 ---
+🔗 Live InteractiveDashboard : https://app.powerbi.com/view?r=eyJrIjoiZDI0YzlmYzQtMWRhNy00YjZiLWFjYzQtOTQ2ZTdiNTRiMGYyIiwidCI6ImY5MmU3YTZmLTJmNmEtNGEzNi1iMzY2LTdkNGNlMjE4M2U5MiJ9
+![Screenshot (968)](https://github.com/user-attachments/assets/24745458-f10a-4422-a6fc-2605eae7f228)
