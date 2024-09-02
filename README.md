@@ -1,4 +1,4 @@
-# End-End-HR-Anlytics Project
+# HR Analytics Dashboard: Optimizing Work-Life Balance
 
 ## Overview
 This project involves the analysis of employee attendance data from April to June 2022, focusing on understanding Work From Home (WFH) and Work From Office (WFO) patterns. The goal was to derive actionable insights for better team activity planning and optimizing office space utilization.
